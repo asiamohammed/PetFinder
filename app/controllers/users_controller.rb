@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    user =User.create(user_params)
+    user =User.create!(user_params)
     render json: user, status: :created
   end
 
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   # PATCH /users/:id
   def update
     user = find_user
-    user.update(user_params)
+    user.update!(user_params)
     render json: user
   end
 
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.permit(:email, :username)
+    params.permit(:email, :username, :password)
   end
 
   def render_not_found_response
