@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_28_094519) do
+ActiveRecord::Schema.define(version: 2023_03_28_104645) do
 
   create_table "pets", force: :cascade do |t|
     t.string "image"
@@ -23,6 +23,13 @@ ActiveRecord::Schema.define(version: 2023_03_28_094519) do
     t.string "animal_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "username"
   end
 
 end
